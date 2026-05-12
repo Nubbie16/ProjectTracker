@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Project Name: Project Tracker
+// Purpose: To create a project tracker to be used to track progress and minutes of all future projects
+// File Name: Program.cs
+// Description: This file contains the main entry point of the application and initializes the project tracker.
+// Programmer: Cody Eckard
+// Creation Date: May 12, 2026
+// GitHub Repository: https://github.com/Nubbie16/ProjectTracker
+
+using System;

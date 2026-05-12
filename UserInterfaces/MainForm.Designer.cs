@@ -1,6 +1,6 @@
 ﻿namespace ProjectTracker1
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            dataGridView1 = new DataGridView();
+            projectNameCol = new DataGridViewTextBoxColumn();
+            projectDescriptionCol = new DataGridViewTextBoxColumn();
+            projectMinutesCol = new DataGridViewTextBoxColumn();
+            projectStatusCol = new DataGridViewTextBoxColumn();
+            editBtnCol = new DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { projectNameCol, projectDescriptionCol, projectMinutesCol, projectStatusCol, editBtnCol });
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Size = new Size(800, 450);
+            dataGridView1.TabIndex = 0;
+            // 
+            // projectNameCol
+            // 
+            projectNameCol.HeaderText = "Project Name";
+            projectNameCol.Name = "projectNameCol";
+            projectNameCol.ReadOnly = true;
+            // 
+            // projectDescriptionCol
+            // 
+            projectDescriptionCol.HeaderText = "Description";
+            projectDescriptionCol.Name = "projectDescriptionCol";
+            projectDescriptionCol.ReadOnly = true;
+            // 
+            // projectMinutesCol
+            // 
+            projectMinutesCol.HeaderText = "Minutes";
+            projectMinutesCol.Name = "projectMinutesCol";
+            projectMinutesCol.ReadOnly = true;
+            // 
+            // projectStatusCol
+            // 
+            projectStatusCol.HeaderText = "Status";
+            projectStatusCol.Name = "projectStatusCol";
+            projectStatusCol.ReadOnly = true;
+            // 
+            // editBtnCol
+            // 
+            editBtnCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            editBtnCol.HeaderText = "Edit/View";
+            editBtnCol.Name = "editBtnCol";
+            editBtnCol.Text = "";
+            editBtnCol.UseColumnTextForButtonValue = true;
+            editBtnCol.Width = 63;
+            // 
+            // mainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
+            Name = "mainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Personal Project Tracker";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn projectNameCol;
+        private DataGridViewTextBoxColumn projectDescriptionCol;
+        private DataGridViewTextBoxColumn projectMinutesCol;
+        private DataGridViewTextBoxColumn projectStatusCol;
+        private DataGridViewButtonColumn editBtnCol;
     }
 }
