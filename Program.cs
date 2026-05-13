@@ -7,3 +7,16 @@
 // GitHub Repository: https://github.com/Nubbie16/ProjectTracker
 
 using System;
+
+namespace ProjectTracker
+{
+class Program
+    {
+        [STAThread]
+        static void Main(string[] args)
+        {
+            // Initialize the project tracker application
+            Application.Run(new MainForm());
+        }
+    }
+}

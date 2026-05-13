@@ -1,6 +1,6 @@
-﻿namespace ProjectTracker1
+﻿namespace ProjectTracker
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,6 +31,9 @@
             dataGridView1 = new DataGridView();
             projectNameCol = new DataGridViewTextBoxColumn();
             projectDescriptionCol = new DataGridViewTextBoxColumn();
+            languageCol = new DataGridViewTextBoxColumn();
+            startDateCol = new DataGridViewTextBoxColumn();
+            endDateCol = new DataGridViewTextBoxColumn();
             projectMinutesCol = new DataGridViewTextBoxColumn();
             projectStatusCol = new DataGridViewTextBoxColumn();
             editBtnCol = new DataGridViewButtonColumn();
@@ -43,7 +46,7 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { projectNameCol, projectDescriptionCol, projectMinutesCol, projectStatusCol, editBtnCol });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { projectNameCol, projectDescriptionCol, languageCol, startDateCol, endDateCol, projectMinutesCol, projectStatusCol, editBtnCol });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
@@ -62,6 +65,24 @@
             projectDescriptionCol.HeaderText = "Description";
             projectDescriptionCol.Name = "projectDescriptionCol";
             projectDescriptionCol.ReadOnly = true;
+            // 
+            // languageCol
+            // 
+            languageCol.HeaderText = "Language";
+            languageCol.Name = "languageCol";
+            languageCol.ReadOnly = true;
+            // 
+            // startDateCol
+            // 
+            startDateCol.HeaderText = "Start Date";
+            startDateCol.Name = "startDateCol";
+            startDateCol.ReadOnly = true;
+            // 
+            // endDateCol
+            // 
+            endDateCol.HeaderText = "End Date";
+            endDateCol.Name = "endDateCol";
+            endDateCol.ReadOnly = true;
             // 
             // projectMinutesCol
             // 
@@ -102,6 +123,9 @@
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn projectNameCol;
         private DataGridViewTextBoxColumn projectDescriptionCol;
+        private DataGridViewTextBoxColumn languageCol;
+        private DataGridViewTextBoxColumn startDateCol;
+        private DataGridViewTextBoxColumn endDateCol;
         private DataGridViewTextBoxColumn projectMinutesCol;
         private DataGridViewTextBoxColumn projectStatusCol;
         private DataGridViewButtonColumn editBtnCol;
