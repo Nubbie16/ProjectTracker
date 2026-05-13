@@ -26,5 +26,18 @@ namespace ProjectTracker.UserInterfaces
         {
             InitializeComponent();
         }
-    }
+
+        private void nameTXT_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nameTXT.Text))
+            {
+                this.Text = "Personal Project Tracker";
+            }
+            else
+            {
+                this.Text = nameTXT.Text;
+            }
+        }
+
+
 }

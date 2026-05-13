@@ -21,7 +21,7 @@ namespace ProjectTracker.Models
         // Properties of the Project class
         // Set all fields to default values to prevent null reference exceptions
 
-        public int Id { get; set; } = 0;                            // Unique identifier for the project
+        public int Id { get; set; } = 0;                            // Unique identifier for the project(used for database purposes)
         public string Name { get; set; } = string.Empty;            // Name of the project
         public string Description { get; set; } = string.Empty;     // Description of the project
         public DateTime StartDate { get; set; } = DateTime.Now;     // Start date of the project
