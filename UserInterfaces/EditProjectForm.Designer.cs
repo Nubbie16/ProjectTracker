@@ -194,6 +194,7 @@
             // 
             langCBO.Anchor = AnchorStyles.Left;
             langCBO.FormattingEnabled = true;
+            langCBO.Items.AddRange(new object[] { "C", "C++", "C#", "Dart", "Go", "Java", "JavaScript", "Kotlin", "PHP", "Python", "Ruby", "Rust", "SQL", "Swift", "TypeScript" });
             langCBO.Location = new Point(175, 189);
             langCBO.Name = "langCBO";
             langCBO.Size = new Size(213, 23);
@@ -227,6 +228,7 @@
             submitBtn.TabIndex = 16;
             submitBtn.Text = "Submit";
             submitBtn.UseVisualStyleBackColor = true;
+            submitBtn.Click += submitBtn_Click;
             // 
             // EditProjectForm
             // 

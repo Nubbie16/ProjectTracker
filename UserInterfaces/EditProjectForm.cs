@@ -39,5 +39,9 @@ namespace ProjectTracker.UserInterfaces
             }
         }
 
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
 
+        }
+    }
 }

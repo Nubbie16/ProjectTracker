@@ -6,7 +6,9 @@
 // Creation Date: May 12, 2026
 // GitHub Repository: https://github.com/Nubbie16/ProjectTracker
 
+using ProjectTracker.UserInterfaces;
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace ProjectTracker
@@ -17,7 +19,18 @@ namespace ProjectTracker
         {
             InitializeComponent();
 
-         
         }
+
+        private void newProjectBtn_Click(object sender, EventArgs e)
+        {
+            new EditProjectForm().Show();
+        }
+
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

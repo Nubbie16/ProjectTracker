@@ -43,6 +43,7 @@
             minstbLogLbl = new Label();
             minsTXT = new TextBox();
             submitBtn = new Button();
+            newProjectBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -115,17 +116,18 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.4847641F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.5152359F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 78F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 62F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 147F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 182F));
-            tableLayoutPanel1.Controls.Add(minsTXT, 3, 0);
-            tableLayoutPanel1.Controls.Add(minstbLogLbl, 2, 0);
-            tableLayoutPanel1.Controls.Add(langCBO, 1, 0);
-            tableLayoutPanel1.Controls.Add(proNameLbl, 0, 0);
-            tableLayoutPanel1.Controls.Add(submitBtn, 4, 0);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 61.9377174F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38.0622826F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 216F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 102F));
+            tableLayoutPanel1.Controls.Add(newProjectBtn, 0, 0);
+            tableLayoutPanel1.Controls.Add(submitBtn, 5, 0);
+            tableLayoutPanel1.Controls.Add(minsTXT, 4, 0);
+            tableLayoutPanel1.Controls.Add(minstbLogLbl, 3, 0);
+            tableLayoutPanel1.Controls.Add(langCBO, 2, 0);
+            tableLayoutPanel1.Controls.Add(proNameLbl, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
             tableLayoutPanel1.Location = new Point(0, 334);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -138,9 +140,9 @@
             // 
             proNameLbl.Anchor = AnchorStyles.Right;
             proNameLbl.AutoSize = true;
-            proNameLbl.Location = new Point(34, 43);
+            proNameLbl.Location = new Point(204, 50);
             proNameLbl.Name = "proNameLbl";
-            proNameLbl.Size = new Size(47, 30);
+            proNameLbl.Size = new Size(82, 15);
             proNameLbl.TabIndex = 0;
             proNameLbl.Text = "Project Name:";
             // 
@@ -148,25 +150,25 @@
             // 
             langCBO.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             langCBO.FormattingEnabled = true;
-            langCBO.Location = new Point(87, 46);
+            langCBO.Location = new Point(292, 46);
             langCBO.Name = "langCBO";
-            langCBO.Size = new Size(240, 23);
+            langCBO.Size = new Size(210, 23);
             langCBO.TabIndex = 12;
             // 
             // minstbLogLbl
             // 
             minstbLogLbl.Anchor = AnchorStyles.Right;
             minstbLogLbl.AutoSize = true;
-            minstbLogLbl.Location = new Point(338, 43);
+            minstbLogLbl.Location = new Point(513, 50);
             minstbLogLbl.Name = "minstbLogLbl";
-            minstbLogLbl.Size = new Size(67, 30);
+            minstbLogLbl.Size = new Size(126, 15);
             minstbLogLbl.TabIndex = 13;
             minstbLogLbl.Text = "Minutes to be Logged:";
             // 
             // minsTXT
             // 
             minsTXT.Anchor = AnchorStyles.Left;
-            minsTXT.Location = new Point(411, 46);
+            minsTXT.Location = new Point(645, 46);
             minsTXT.MaxLength = 1000;
             minsTXT.Name = "minsTXT";
             minsTXT.Size = new Size(45, 23);
@@ -175,12 +177,24 @@
             // submitBtn
             // 
             submitBtn.Anchor = AnchorStyles.None;
-            submitBtn.Location = new Point(506, 46);
+            submitBtn.Location = new Point(711, 46);
             submitBtn.Name = "submitBtn";
             submitBtn.Size = new Size(75, 23);
             submitBtn.TabIndex = 15;
             submitBtn.Text = "Submit";
             submitBtn.UseVisualStyleBackColor = true;
+            submitBtn.Click += submitBtn_Click;
+            // 
+            // newProjectBtn
+            // 
+            newProjectBtn.Anchor = AnchorStyles.None;
+            newProjectBtn.Location = new Point(47, 38);
+            newProjectBtn.Name = "newProjectBtn";
+            newProjectBtn.Size = new Size(85, 39);
+            newProjectBtn.TabIndex = 16;
+            newProjectBtn.Text = "Add New Project";
+            newProjectBtn.UseVisualStyleBackColor = true;
+            newProjectBtn.Click += newProjectBtn_Click;
             // 
             // MainForm
             // 
@@ -215,5 +229,6 @@
         private ComboBox langCBO;
         private TextBox minsTXT;
         private Button submitBtn;
+        private Button newProjectBtn;
     }
 }
