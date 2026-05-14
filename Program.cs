@@ -6,8 +6,6 @@
 // Creation Date: May 12, 2026
 // GitHub Repository: https://github.com/Nubbie16/ProjectTracker
 
-using System;
-
 namespace ProjectTracker
 {
 class Program

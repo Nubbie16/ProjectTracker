@@ -9,10 +9,6 @@
 using ProjectTracker.Data;
 using ProjectTracker.Models;
 using ProjectTracker.UserInterfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace ProjectTracker
 {

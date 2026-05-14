@@ -6,18 +6,7 @@
 // Creation Date: May 12, 2026
 // GitHub Repository: https://github.com/Nubbie16/ProjectTracker
 
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ProjectTracker.Models;
-using ProjectTracker.Data;
 
 
 namespace ProjectTracker.UserInterfaces

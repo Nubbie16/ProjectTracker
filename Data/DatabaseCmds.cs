@@ -6,9 +6,6 @@
 // Creation Date: May 12, 2026
 // GitHub Repository: https://github.com/Nubbie16/ProjectTracker
 
-using System;
-using System.Collections.Generic;
-using System.IO;
 using Microsoft.Data.Sqlite;
 using ProjectTracker.Models;
 
