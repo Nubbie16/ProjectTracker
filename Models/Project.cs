@@ -24,9 +24,9 @@ namespace ProjectTracker.Models
         public int Id { get; set; } = 0;                            // Unique identifier for the project(used for database purposes)
         public string Name { get; set; } = string.Empty;            // Name of the project
         public string Description { get; set; } = string.Empty;     // Description of the project
-        public DateTime StartDate { get; set; } = DateTime.Now;     // Start date of the project
-        public DateTime EndDate { get; set; } = DateTime.Now;       // End date of the project
         public string Language { get; set; } = string.Empty;        // Programming language used in the project
+        public DateTime StartDate { get; set; } = DateTime.Now;     // Start date of the project
+        public DateTime? EndDate { get; set; }                      // End date of the project
         public int Minutes { get; set; } = 0;                       // Total minutes spent on the project
         public string Status { get; set; } = string.Empty;          // Status of the project (e.g., "Not Started", "In Progress", "Completed", "On Hold")
     }

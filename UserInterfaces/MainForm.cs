@@ -7,6 +7,7 @@
 // GitHub Repository: https://github.com/Nubbie16/ProjectTracker
 
 using ProjectTracker.UserInterfaces;
+using ProjectTracker.Models;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
@@ -15,10 +16,45 @@ namespace ProjectTracker
 {
     public partial class MainForm : Form
     {
+        private List<Project> projects = new List<Project>();   // This will hold the list of projects in memory for testing before SQLite is used
+        private int nextProjectID = 1;                          // This will be used to assign unique IDs to projects for testing before SQLite is used
+
         public MainForm()
         {
             InitializeComponent();
 
+            projects.Add(new Project
+            {
+                Id = nextProjectID++,
+                Name = "Project Alpha",
+                Description = "This is the first project.",
+                Language = "C#",
+                StartDate = DateTime.Today,
+                EndDate = null,
+                Minutes = 0,
+                Status = "Not Started"
+            });
+
+            RefreshProjectGrid();
+        }
+
+        private void RefreshProjectGrid()
+        {
+            projectsGV.Rows.Clear();
+
+            foreach (Project project in projects)
+            {
+                projectsGV.Rows.Add(
+                    project.Id,
+                    project.Name,
+                    project.Description,
+                    project.Language,
+                    project.StartDate.ToShortDateString(),
+                    project.EndDate?.ToShortDateString() ?? "",
+                    project.Minutes,
+                    project.Status,
+                    "Edit/View");
+            }
         }
 
         private void newProjectBtn_Click(object sender, EventArgs e)

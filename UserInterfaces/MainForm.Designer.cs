@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            projectsGV = new DataGridView();
+            IDCol = new DataGridViewTextBoxColumn();
             projectNameCol = new DataGridViewTextBoxColumn();
             projectDescriptionCol = new DataGridViewTextBoxColumn();
             languageCol = new DataGridViewTextBoxColumn();
@@ -38,29 +39,36 @@
             projectStatusCol = new DataGridViewTextBoxColumn();
             editBtnCol = new DataGridViewButtonColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
-            proNameLbl = new Label();
-            langCBO = new ComboBox();
-            minstbLogLbl = new Label();
-            minsTXT = new TextBox();
-            submitBtn = new Button();
             newProjectBtn = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            submitBtn = new Button();
+            minsTXT = new TextBox();
+            minsTBLogLbl = new Label();
+            langCBO = new ComboBox();
+            proNameLbl = new Label();
+            ((System.ComponentModel.ISupportInitialize)projectsGV).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // projectsGV
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { projectNameCol, projectDescriptionCol, languageCol, startDateCol, endDateCol, projectMinutesCol, projectStatusCol, editBtnCol });
-            dataGridView1.Dock = DockStyle.Top;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(800, 334);
-            dataGridView1.TabIndex = 0;
+            projectsGV.AllowUserToAddRows = false;
+            projectsGV.AllowUserToDeleteRows = false;
+            projectsGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            projectsGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            projectsGV.Columns.AddRange(new DataGridViewColumn[] { IDCol, projectNameCol, projectDescriptionCol, languageCol, startDateCol, endDateCol, projectMinutesCol, projectStatusCol, editBtnCol });
+            projectsGV.Dock = DockStyle.Top;
+            projectsGV.Location = new Point(0, 0);
+            projectsGV.Name = "projectsGV";
+            projectsGV.RowHeadersVisible = false;
+            projectsGV.Size = new Size(800, 334);
+            projectsGV.TabIndex = 0;
+            // 
+            // IDCol
+            // 
+            IDCol.HeaderText = "ID";
+            IDCol.Name = "IDCol";
+            IDCol.ReadOnly = true;
+            IDCol.Visible = false;
             // 
             // projectNameCol
             // 
@@ -118,14 +126,14 @@
             tableLayoutPanel1.ColumnCount = 6;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 61.9377174F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38.0622826F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 216F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 102F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 209F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 142F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 127F));
             tableLayoutPanel1.Controls.Add(newProjectBtn, 0, 0);
             tableLayoutPanel1.Controls.Add(submitBtn, 5, 0);
             tableLayoutPanel1.Controls.Add(minsTXT, 4, 0);
-            tableLayoutPanel1.Controls.Add(minstbLogLbl, 3, 0);
+            tableLayoutPanel1.Controls.Add(minsTBLogLbl, 3, 0);
             tableLayoutPanel1.Controls.Add(langCBO, 2, 0);
             tableLayoutPanel1.Controls.Add(proNameLbl, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
@@ -136,59 +144,10 @@
             tableLayoutPanel1.Size = new Size(800, 116);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // proNameLbl
-            // 
-            proNameLbl.Anchor = AnchorStyles.Right;
-            proNameLbl.AutoSize = true;
-            proNameLbl.Location = new Point(204, 50);
-            proNameLbl.Name = "proNameLbl";
-            proNameLbl.Size = new Size(82, 15);
-            proNameLbl.TabIndex = 0;
-            proNameLbl.Text = "Project Name:";
-            // 
-            // langCBO
-            // 
-            langCBO.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            langCBO.FormattingEnabled = true;
-            langCBO.Location = new Point(292, 46);
-            langCBO.Name = "langCBO";
-            langCBO.Size = new Size(210, 23);
-            langCBO.TabIndex = 12;
-            // 
-            // minstbLogLbl
-            // 
-            minstbLogLbl.Anchor = AnchorStyles.Right;
-            minstbLogLbl.AutoSize = true;
-            minstbLogLbl.Location = new Point(513, 50);
-            minstbLogLbl.Name = "minstbLogLbl";
-            minstbLogLbl.Size = new Size(126, 15);
-            minstbLogLbl.TabIndex = 13;
-            minstbLogLbl.Text = "Minutes to be Logged:";
-            // 
-            // minsTXT
-            // 
-            minsTXT.Anchor = AnchorStyles.Left;
-            minsTXT.Location = new Point(645, 46);
-            minsTXT.MaxLength = 1000;
-            minsTXT.Name = "minsTXT";
-            minsTXT.Size = new Size(45, 23);
-            minsTXT.TabIndex = 14;
-            // 
-            // submitBtn
-            // 
-            submitBtn.Anchor = AnchorStyles.None;
-            submitBtn.Location = new Point(711, 46);
-            submitBtn.Name = "submitBtn";
-            submitBtn.Size = new Size(75, 23);
-            submitBtn.TabIndex = 15;
-            submitBtn.Text = "Submit";
-            submitBtn.UseVisualStyleBackColor = true;
-            submitBtn.Click += submitBtn_Click;
-            // 
             // newProjectBtn
             // 
             newProjectBtn.Anchor = AnchorStyles.None;
-            newProjectBtn.Location = new Point(47, 38);
+            newProjectBtn.Location = new Point(38, 38);
             newProjectBtn.Name = "newProjectBtn";
             newProjectBtn.Size = new Size(85, 39);
             newProjectBtn.TabIndex = 16;
@@ -196,17 +155,66 @@
             newProjectBtn.UseVisualStyleBackColor = true;
             newProjectBtn.Click += newProjectBtn_Click;
             // 
+            // submitBtn
+            // 
+            submitBtn.Anchor = AnchorStyles.None;
+            submitBtn.Location = new Point(691, 46);
+            submitBtn.Name = "submitBtn";
+            submitBtn.Size = new Size(90, 23);
+            submitBtn.TabIndex = 15;
+            submitBtn.Text = "Log Minutes";
+            submitBtn.UseVisualStyleBackColor = true;
+            submitBtn.Click += submitBtn_Click;
+            // 
+            // minsTXT
+            // 
+            minsTXT.Anchor = AnchorStyles.Left;
+            minsTXT.Location = new Point(615, 46);
+            minsTXT.MaxLength = 1000;
+            minsTXT.Name = "minsTXT";
+            minsTXT.Size = new Size(45, 23);
+            minsTXT.TabIndex = 14;
+            // 
+            // minsTBLogLbl
+            // 
+            minsTBLogLbl.Anchor = AnchorStyles.Right;
+            minsTBLogLbl.AutoSize = true;
+            minsTBLogLbl.Location = new Point(483, 50);
+            minsTBLogLbl.Name = "minsTBLogLbl";
+            minsTBLogLbl.Size = new Size(126, 15);
+            minsTBLogLbl.TabIndex = 13;
+            minsTBLogLbl.Text = "Minutes to be Logged:";
+            // 
+            // langCBO
+            // 
+            langCBO.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            langCBO.FormattingEnabled = true;
+            langCBO.Location = new Point(264, 46);
+            langCBO.Name = "langCBO";
+            langCBO.Size = new Size(203, 23);
+            langCBO.TabIndex = 12;
+            // 
+            // proNameLbl
+            // 
+            proNameLbl.Anchor = AnchorStyles.Right;
+            proNameLbl.AutoSize = true;
+            proNameLbl.Location = new Point(176, 50);
+            proNameLbl.Name = "proNameLbl";
+            proNameLbl.Size = new Size(82, 15);
+            proNameLbl.TabIndex = 0;
+            proNameLbl.Text = "Project Name:";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(projectsGV);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Personal Project Tracker";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)projectsGV).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -214,7 +222,15 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView projectsGV;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label proNameLbl;
+        private Label minsTBLogLbl;
+        private ComboBox langCBO;
+        private TextBox minsTXT;
+        private Button submitBtn;
+        private Button newProjectBtn;
+        private DataGridViewTextBoxColumn IDCol;
         private DataGridViewTextBoxColumn projectNameCol;
         private DataGridViewTextBoxColumn projectDescriptionCol;
         private DataGridViewTextBoxColumn languageCol;
@@ -223,12 +239,5 @@
         private DataGridViewTextBoxColumn projectMinutesCol;
         private DataGridViewTextBoxColumn projectStatusCol;
         private DataGridViewButtonColumn editBtnCol;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Label proNameLbl;
-        private Label minstbLogLbl;
-        private ComboBox langCBO;
-        private TextBox minsTXT;
-        private Button submitBtn;
-        private Button newProjectBtn;
     }
 }

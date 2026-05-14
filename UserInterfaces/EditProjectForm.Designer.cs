@@ -44,6 +44,7 @@
             minsLoggedLbl = new Label();
             statusCBP = new ComboBox();
             submitBtn = new Button();
+            cancelBtn = new Button();
             editLayout.SuspendLayout();
             SuspendLayout();
             // 
@@ -206,8 +207,9 @@
             minsLoggedLbl.BackColor = Color.White;
             minsLoggedLbl.Location = new Point(175, 230);
             minsLoggedLbl.Name = "minsLoggedLbl";
-            minsLoggedLbl.Size = new Size(67, 15);
+            minsLoggedLbl.Size = new Size(45, 15);
             minsLoggedLbl.TabIndex = 12;
+            minsLoggedLbl.Text = "0";
             // 
             // statusCBP
             // 
@@ -226,15 +228,26 @@
             submitBtn.Name = "submitBtn";
             submitBtn.Size = new Size(75, 23);
             submitBtn.TabIndex = 16;
-            submitBtn.Text = "Submit";
+            submitBtn.Text = "Save";
             submitBtn.UseVisualStyleBackColor = true;
             submitBtn.Click += submitBtn_Click;
+            // 
+            // cancelBtn
+            // 
+            cancelBtn.Anchor = AnchorStyles.None;
+            cancelBtn.Location = new Point(290, 299);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(75, 23);
+            cancelBtn.TabIndex = 17;
+            cancelBtn.Text = "Cancel";
+            cancelBtn.UseVisualStyleBackColor = true;
             // 
             // EditProjectForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cancelBtn);
             Controls.Add(submitBtn);
             Controls.Add(editLayout);
             Name = "EditProjectForm";
@@ -263,5 +276,6 @@
         private Label minsLoggedLbl;
         private ComboBox statusCBP;
         private Button submitBtn;
+        private Button cancelBtn;
     }
 }
