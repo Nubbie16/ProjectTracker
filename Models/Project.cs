@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace ProjectTracker.Models
 {
-    internal class Project
+    public class Project
     {
 
         // Properties of the Project class

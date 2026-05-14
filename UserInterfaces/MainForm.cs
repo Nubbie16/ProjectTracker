@@ -53,7 +53,7 @@ namespace ProjectTracker
                     project.EndDate?.ToShortDateString() ?? "",
                     project.Minutes,
                     project.Status,
-                    "Edit/View");
+                    "View/Edit");
             }
         }
 
@@ -67,6 +67,23 @@ namespace ProjectTracker
 
         }
 
+        private void projectsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            { return; }
 
+            if (e.ColumnIndex == projectsGV.Columns["editBtnCol"].Index)
+            {
+                Project selectedProject = projects[e.RowIndex];
+                EditProjectForm editForm = new EditProjectForm(selectedProject);
+
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    projects[e.RowIndex] = editForm.newProject;
+                    RefreshProjectGrid();
+                }
+
+            }
+        }
     }
 }

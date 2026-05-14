@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             projectsGV = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            newProjectBtn = new Button();
+            submitBtn = new Button();
+            minsTXT = new TextBox();
+            minsTBLogLbl = new Label();
+            langCBO = new ComboBox();
+            proNameLbl = new Label();
             IDCol = new DataGridViewTextBoxColumn();
             projectNameCol = new DataGridViewTextBoxColumn();
             projectDescriptionCol = new DataGridViewTextBoxColumn();
@@ -38,13 +45,6 @@
             projectMinutesCol = new DataGridViewTextBoxColumn();
             projectStatusCol = new DataGridViewTextBoxColumn();
             editBtnCol = new DataGridViewButtonColumn();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            newProjectBtn = new Button();
-            submitBtn = new Button();
-            minsTXT = new TextBox();
-            minsTBLogLbl = new Label();
-            langCBO = new ComboBox();
-            proNameLbl = new Label();
             ((System.ComponentModel.ISupportInitialize)projectsGV).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -62,64 +62,7 @@
             projectsGV.RowHeadersVisible = false;
             projectsGV.Size = new Size(800, 334);
             projectsGV.TabIndex = 0;
-            // 
-            // IDCol
-            // 
-            IDCol.HeaderText = "ID";
-            IDCol.Name = "IDCol";
-            IDCol.ReadOnly = true;
-            IDCol.Visible = false;
-            // 
-            // projectNameCol
-            // 
-            projectNameCol.HeaderText = "Project Name";
-            projectNameCol.Name = "projectNameCol";
-            projectNameCol.ReadOnly = true;
-            // 
-            // projectDescriptionCol
-            // 
-            projectDescriptionCol.HeaderText = "Description";
-            projectDescriptionCol.Name = "projectDescriptionCol";
-            projectDescriptionCol.ReadOnly = true;
-            // 
-            // languageCol
-            // 
-            languageCol.HeaderText = "Language";
-            languageCol.Name = "languageCol";
-            languageCol.ReadOnly = true;
-            // 
-            // startDateCol
-            // 
-            startDateCol.HeaderText = "Start Date";
-            startDateCol.Name = "startDateCol";
-            startDateCol.ReadOnly = true;
-            // 
-            // endDateCol
-            // 
-            endDateCol.HeaderText = "End Date";
-            endDateCol.Name = "endDateCol";
-            endDateCol.ReadOnly = true;
-            // 
-            // projectMinutesCol
-            // 
-            projectMinutesCol.HeaderText = "Minutes";
-            projectMinutesCol.Name = "projectMinutesCol";
-            projectMinutesCol.ReadOnly = true;
-            // 
-            // projectStatusCol
-            // 
-            projectStatusCol.HeaderText = "Status";
-            projectStatusCol.Name = "projectStatusCol";
-            projectStatusCol.ReadOnly = true;
-            // 
-            // editBtnCol
-            // 
-            editBtnCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            editBtnCol.HeaderText = "Edit/View";
-            editBtnCol.Name = "editBtnCol";
-            editBtnCol.Text = "";
-            editBtnCol.UseColumnTextForButtonValue = true;
-            editBtnCol.Width = 63;
+            projectsGV.CellContentClick += projectsGV_CellContentClick;
             // 
             // tableLayoutPanel1
             // 
@@ -203,6 +146,64 @@
             proNameLbl.Size = new Size(82, 15);
             proNameLbl.TabIndex = 0;
             proNameLbl.Text = "Project Name:";
+            // 
+            // IDCol
+            // 
+            IDCol.HeaderText = "ID";
+            IDCol.Name = "IDCol";
+            IDCol.ReadOnly = true;
+            IDCol.Visible = false;
+            // 
+            // projectNameCol
+            // 
+            projectNameCol.HeaderText = "Project Name";
+            projectNameCol.Name = "projectNameCol";
+            projectNameCol.ReadOnly = true;
+            // 
+            // projectDescriptionCol
+            // 
+            projectDescriptionCol.HeaderText = "Description";
+            projectDescriptionCol.Name = "projectDescriptionCol";
+            projectDescriptionCol.ReadOnly = true;
+            // 
+            // languageCol
+            // 
+            languageCol.HeaderText = "Language";
+            languageCol.Name = "languageCol";
+            languageCol.ReadOnly = true;
+            // 
+            // startDateCol
+            // 
+            startDateCol.HeaderText = "Start Date";
+            startDateCol.Name = "startDateCol";
+            startDateCol.ReadOnly = true;
+            // 
+            // endDateCol
+            // 
+            endDateCol.HeaderText = "End Date";
+            endDateCol.Name = "endDateCol";
+            endDateCol.ReadOnly = true;
+            // 
+            // projectMinutesCol
+            // 
+            projectMinutesCol.HeaderText = "Minutes";
+            projectMinutesCol.Name = "projectMinutesCol";
+            projectMinutesCol.ReadOnly = true;
+            // 
+            // projectStatusCol
+            // 
+            projectStatusCol.HeaderText = "Status";
+            projectStatusCol.Name = "projectStatusCol";
+            projectStatusCol.ReadOnly = true;
+            // 
+            // editBtnCol
+            // 
+            editBtnCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            editBtnCol.HeaderText = "View/Edit";
+            editBtnCol.Name = "editBtnCol";
+            editBtnCol.Text = "Edit";
+            editBtnCol.UseColumnTextForButtonValue = true;
+            editBtnCol.Width = 63;
             // 
             // MainForm
             // 
