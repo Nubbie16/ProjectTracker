@@ -53,14 +53,17 @@
             // 
             projectsGV.AllowUserToAddRows = false;
             projectsGV.AllowUserToDeleteRows = false;
+            projectsGV.AllowUserToResizeRows = false;
             projectsGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             projectsGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             projectsGV.Columns.AddRange(new DataGridViewColumn[] { IDCol, projectNameCol, projectDescriptionCol, languageCol, startDateCol, endDateCol, projectMinutesCol, projectStatusCol, editBtnCol });
-            projectsGV.Dock = DockStyle.Top;
-            projectsGV.Location = new Point(0, 0);
+            tableLayoutPanel1.SetColumnSpan(projectsGV, 8);
+            projectsGV.Dock = DockStyle.Fill;
+            projectsGV.Location = new Point(3, 3);
+            projectsGV.MultiSelect = false;
             projectsGV.Name = "projectsGV";
             projectsGV.RowHeadersVisible = false;
-            projectsGV.Size = new Size(800, 334);
+            projectsGV.Size = new Size(999, 351);
             projectsGV.TabIndex = 0;
             projectsGV.CellContentClick += projectsGV_CellContentClick;
             // 
@@ -73,84 +76,105 @@
             // 
             // projectNameCol
             // 
+            projectNameCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             projectNameCol.HeaderText = "Project Name";
+            projectNameCol.MinimumWidth = 100;
             projectNameCol.Name = "projectNameCol";
             projectNameCol.ReadOnly = true;
+            projectNameCol.Width = 104;
             // 
             // projectDescriptionCol
             // 
             projectDescriptionCol.HeaderText = "Description";
+            projectDescriptionCol.MinimumWidth = 100;
             projectDescriptionCol.Name = "projectDescriptionCol";
             projectDescriptionCol.ReadOnly = true;
+            projectDescriptionCol.Resizable = DataGridViewTriState.False;
             // 
             // languageCol
             // 
+            languageCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             languageCol.HeaderText = "Language";
             languageCol.Name = "languageCol";
             languageCol.ReadOnly = true;
+            languageCol.Width = 84;
             // 
             // startDateCol
             // 
+            startDateCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             startDateCol.HeaderText = "Start Date";
             startDateCol.Name = "startDateCol";
             startDateCol.ReadOnly = true;
+            startDateCol.Width = 83;
             // 
             // endDateCol
             // 
+            endDateCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             endDateCol.HeaderText = "End Date";
             endDateCol.Name = "endDateCol";
             endDateCol.ReadOnly = true;
+            endDateCol.Width = 79;
             // 
             // projectMinutesCol
             // 
+            projectMinutesCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             projectMinutesCol.HeaderText = "Minutes";
             projectMinutesCol.Name = "projectMinutesCol";
             projectMinutesCol.ReadOnly = true;
+            projectMinutesCol.Width = 75;
             // 
             // projectStatusCol
             // 
+            projectStatusCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             projectStatusCol.HeaderText = "Status";
             projectStatusCol.Name = "projectStatusCol";
             projectStatusCol.ReadOnly = true;
+            projectStatusCol.Width = 64;
             // 
             // editBtnCol
             // 
             editBtnCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             editBtnCol.HeaderText = "View/Edit";
+            editBtnCol.MinimumWidth = 70;
             editBtnCol.Name = "editBtnCol";
+            editBtnCol.Resizable = DataGridViewTriState.False;
             editBtnCol.Text = "Edit";
             editBtnCol.UseColumnTextForButtonValue = true;
-            editBtnCol.Width = 63;
+            editBtnCol.Width = 70;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 61.9377174F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38.0622826F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 209F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 142F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 127F));
-            tableLayoutPanel1.Controls.Add(newProjectBtn, 0, 0);
-            tableLayoutPanel1.Controls.Add(submitBtn, 5, 0);
-            tableLayoutPanel1.Controls.Add(minutesToLogTXT, 4, 0);
-            tableLayoutPanel1.Controls.Add(minsTBLogLbl, 3, 0);
-            tableLayoutPanel1.Controls.Add(projectNameCBO, 2, 0);
-            tableLayoutPanel1.Controls.Add(proNameLbl, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 334);
+            tableLayoutPanel1.ColumnCount = 8;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 113F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 105F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 184F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 74F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 51F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 104F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(newProjectBtn, 1, 1);
+            tableLayoutPanel1.Controls.Add(projectsGV, 0, 0);
+            tableLayoutPanel1.Controls.Add(submitBtn, 6, 1);
+            tableLayoutPanel1.Controls.Add(minutesToLogTXT, 5, 1);
+            tableLayoutPanel1.Controls.Add(minsTBLogLbl, 4, 1);
+            tableLayoutPanel1.Controls.Add(projectNameCBO, 3, 1);
+            tableLayoutPanel1.Controls.Add(proNameLbl, 2, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(800, 116);
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 93F));
+            tableLayoutPanel1.Size = new Size(1005, 450);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // newProjectBtn
             // 
             newProjectBtn.Anchor = AnchorStyles.None;
-            newProjectBtn.Location = new Point(38, 38);
+            newProjectBtn.Location = new Point(201, 384);
             newProjectBtn.Name = "newProjectBtn";
-            newProjectBtn.Size = new Size(85, 39);
+            newProjectBtn.Size = new Size(84, 39);
             newProjectBtn.TabIndex = 16;
             newProjectBtn.Text = "Add New Project";
             newProjectBtn.UseVisualStyleBackColor = true;
@@ -159,7 +183,7 @@
             // submitBtn
             // 
             submitBtn.Anchor = AnchorStyles.None;
-            submitBtn.Location = new Point(691, 46);
+            submitBtn.Location = new Point(721, 392);
             submitBtn.Name = "submitBtn";
             submitBtn.Size = new Size(90, 23);
             submitBtn.TabIndex = 15;
@@ -169,8 +193,8 @@
             // 
             // minutesToLogTXT
             // 
-            minutesToLogTXT.Anchor = AnchorStyles.Left;
-            minutesToLogTXT.Location = new Point(615, 46);
+            minutesToLogTXT.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            minutesToLogTXT.Location = new Point(666, 392);
             minutesToLogTXT.MaxLength = 1000;
             minutesToLogTXT.Name = "minutesToLogTXT";
             minutesToLogTXT.Size = new Size(45, 23);
@@ -180,9 +204,9 @@
             // 
             minsTBLogLbl.Anchor = AnchorStyles.Right;
             minsTBLogLbl.AutoSize = true;
-            minsTBLogLbl.Location = new Point(483, 50);
+            minsTBLogLbl.Location = new Point(593, 388);
             minsTBLogLbl.Name = "minsTBLogLbl";
-            minsTBLogLbl.Size = new Size(126, 15);
+            minsTBLogLbl.Size = new Size(67, 30);
             minsTBLogLbl.TabIndex = 13;
             minsTBLogLbl.Text = "Minutes to be Logged:";
             // 
@@ -190,16 +214,16 @@
             // 
             projectNameCBO.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             projectNameCBO.FormattingEnabled = true;
-            projectNameCBO.Location = new Point(264, 46);
+            projectNameCBO.Location = new Point(408, 392);
             projectNameCBO.Name = "projectNameCBO";
-            projectNameCBO.Size = new Size(203, 23);
+            projectNameCBO.Size = new Size(178, 23);
             projectNameCBO.TabIndex = 12;
             // 
             // proNameLbl
             // 
             proNameLbl.Anchor = AnchorStyles.Right;
             proNameLbl.AutoSize = true;
-            proNameLbl.Location = new Point(176, 50);
+            proNameLbl.Location = new Point(320, 396);
             proNameLbl.Name = "proNameLbl";
             proNameLbl.Size = new Size(82, 15);
             proNameLbl.TabIndex = 0;
@@ -209,9 +233,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1005, 450);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(projectsGV);
+            MinimumSize = new Size(660, 300);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Personal Project Tracker";
