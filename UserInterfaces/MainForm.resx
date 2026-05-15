@@ -144,4 +144,29 @@
   <metadata name="editBtnCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAMMOAADDDgAAAAAAAAAA
+        AAD5+fn/+Pj4//j4+P/4+Pj/+Pj4//j4+f/4+Pn/+Pj4//j5+f/4+fn/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/5+fn/+Pj4//j4+f/4+Pj/+Pj4//j4+P/4+Pj/+f38//n9/P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+fv7//Xv8f/07fD/+vv7//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pn5//7////PaYz/y2GF//7////4+fn/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//z////pxtH/0gBP/8YAR//kw87//f////j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//n8+//19/X/2TF0//tHov/tHnj/xjNk//f6
+        +f/6/Pv/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/6////5H6l//FBk//6stb//5LJ/9wA
+        Wf/WiKH//f////j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/6////8szb/+5Mk//5tdX/9d7n//fE
+        2v/+dbj/zwxW/+ra3v/8////+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+vr/+PX3/+12pv/1rsz/9/j4//n/
+        ///37/L/+8Db//JRmP/QSXn/+f////n6+v/4+Pj/+Pj4//j4+P/4+Pj/+Pr6//fu8f/23+j/+P////j6
+        +v/4+Pj/+f/9//bq7//9t9f/4jZ8/+CkuP/9////+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+vn/+f78//j4
+        +P/4+Pj/+Pj4//j4+P/4//3/9+fu//qfx//ZToP/8uns//r9/P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j//f/56O//73+t/+KIqf/6////+Pn4//j4+P/4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+P/9//nm7//qa53/8MbW//r////4+Pj/+Pj4//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/5//7/9t/p/+6auv/49Pf/+Pr5//j4
+        +P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pf4//n//f/49vf/+PP1//j5
+        +f/5+fn/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+f/4+Pj/+Pj4//j4+P/4+Pj/+Pr5//j5
+        +f/5+fn/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

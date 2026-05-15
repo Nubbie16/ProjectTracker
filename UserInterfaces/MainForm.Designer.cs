@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             projectsGV = new DataGridView();
             IDCol = new DataGridViewTextBoxColumn();
             projectNameCol = new DataGridViewTextBoxColumn();
@@ -235,6 +236,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1005, 450);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(660, 300);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;

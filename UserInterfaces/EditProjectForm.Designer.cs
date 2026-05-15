@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProjectForm));
             editLayout = new TableLayoutPanel();
             cancelBtn = new Button();
             descripLbl = new Label();
@@ -258,6 +259,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 327);
             Controls.Add(editLayout);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimumSize = new Size(691, 331);
             Name = "EditProjectForm";
