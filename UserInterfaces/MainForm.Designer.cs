@@ -65,7 +65,8 @@
             projectsGV.Name = "projectsGV";
             projectsGV.RowHeadersVisible = false;
             projectsGV.Size = new Size(999, 351);
-            projectsGV.TabIndex = 0;
+            projectsGV.TabIndex = 6;
+            projectsGV.TabStop = false;
             projectsGV.CellContentClick += projectsGV_CellContentClick;
             // 
             // IDCol
@@ -176,7 +177,7 @@
             newProjectBtn.Location = new Point(201, 384);
             newProjectBtn.Name = "newProjectBtn";
             newProjectBtn.Size = new Size(84, 39);
-            newProjectBtn.TabIndex = 16;
+            newProjectBtn.TabIndex = 0;
             newProjectBtn.Text = "Add New Project";
             newProjectBtn.UseVisualStyleBackColor = true;
             newProjectBtn.Click += newProjectBtn_Click;
@@ -187,7 +188,7 @@
             submitBtn.Location = new Point(721, 392);
             submitBtn.Name = "submitBtn";
             submitBtn.Size = new Size(90, 23);
-            submitBtn.TabIndex = 15;
+            submitBtn.TabIndex = 5;
             submitBtn.Text = "Log Minutes";
             submitBtn.UseVisualStyleBackColor = true;
             submitBtn.Click += submitBtn_Click;
@@ -199,7 +200,7 @@
             minutesToLogTXT.MaxLength = 1000;
             minutesToLogTXT.Name = "minutesToLogTXT";
             minutesToLogTXT.Size = new Size(45, 23);
-            minutesToLogTXT.TabIndex = 14;
+            minutesToLogTXT.TabIndex = 4;
             // 
             // minsTBLogLbl
             // 
@@ -208,7 +209,7 @@
             minsTBLogLbl.Location = new Point(593, 388);
             minsTBLogLbl.Name = "minsTBLogLbl";
             minsTBLogLbl.Size = new Size(67, 30);
-            minsTBLogLbl.TabIndex = 13;
+            minsTBLogLbl.TabIndex = 3;
             minsTBLogLbl.Text = "Minutes to be Logged:";
             // 
             // projectNameCBO
@@ -218,7 +219,7 @@
             projectNameCBO.Location = new Point(408, 392);
             projectNameCBO.Name = "projectNameCBO";
             projectNameCBO.Size = new Size(178, 23);
-            projectNameCBO.TabIndex = 12;
+            projectNameCBO.TabIndex = 2;
             // 
             // proNameLbl
             // 
@@ -227,11 +228,12 @@
             proNameLbl.Location = new Point(320, 396);
             proNameLbl.Name = "proNameLbl";
             proNameLbl.Size = new Size(82, 15);
-            proNameLbl.TabIndex = 0;
+            proNameLbl.TabIndex = 1;
             proNameLbl.Text = "Project Name:";
             // 
             // MainForm
             // 
+            AcceptButton = submitBtn;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1005, 450);

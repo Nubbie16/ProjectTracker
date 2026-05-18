@@ -95,7 +95,7 @@
             cancelBtn.Location = new Point(215, 261);
             cancelBtn.Name = "cancelBtn";
             cancelBtn.Size = new Size(75, 23);
-            cancelBtn.TabIndex = 17;
+            cancelBtn.TabIndex = 15;
             cancelBtn.Text = "Cancel";
             cancelBtn.UseVisualStyleBackColor = true;
             cancelBtn.Click += cancelBtn_Click;
@@ -107,7 +107,7 @@
             descripLbl.Location = new Point(99, 46);
             descripLbl.Name = "descripLbl";
             descripLbl.Size = new Size(110, 15);
-            descripLbl.TabIndex = 1;
+            descripLbl.TabIndex = 2;
             descripLbl.Text = "Project Description:";
             // 
             // submitBtn
@@ -116,7 +116,7 @@
             submitBtn.Location = new Point(134, 261);
             submitBtn.Name = "submitBtn";
             submitBtn.Size = new Size(75, 23);
-            submitBtn.TabIndex = 16;
+            submitBtn.TabIndex = 14;
             submitBtn.Text = "Save";
             submitBtn.UseVisualStyleBackColor = true;
             submitBtn.Click += submitBtn_Click;
@@ -137,7 +137,7 @@
             nameTXT.Location = new Point(215, 6);
             nameTXT.Name = "nameTXT";
             nameTXT.Size = new Size(213, 23);
-            nameTXT.TabIndex = 7;
+            nameTXT.TabIndex = 1;
             nameTXT.TextChanged += nameTXT_TextChanged;
             // 
             // langCBO
@@ -148,7 +148,7 @@
             langCBO.Location = new Point(215, 114);
             langCBO.Name = "langCBO";
             langCBO.Size = new Size(213, 23);
-            langCBO.TabIndex = 11;
+            langCBO.TabIndex = 5;
             // 
             // descripTXT
             // 
@@ -159,7 +159,7 @@
             editLayout.SetRowSpan(descripTXT, 2);
             descripTXT.ScrollBars = ScrollBars.Vertical;
             descripTXT.Size = new Size(213, 66);
-            descripTXT.TabIndex = 8;
+            descripTXT.TabIndex = 3;
             // 
             // langLbl
             // 
@@ -178,7 +178,7 @@
             minsLogLbl.Location = new Point(84, 226);
             minsLogLbl.Name = "minsLogLbl";
             minsLogLbl.Size = new Size(125, 15);
-            minsLogLbl.TabIndex = 5;
+            minsLogLbl.TabIndex = 12;
             minsLogLbl.Text = "Total Minutes Logged:";
             // 
             // minsLoggedLbl
@@ -189,7 +189,7 @@
             minsLoggedLbl.Location = new Point(215, 226);
             minsLoggedLbl.Name = "minsLoggedLbl";
             minsLoggedLbl.Size = new Size(45, 15);
-            minsLoggedLbl.TabIndex = 12;
+            minsLoggedLbl.TabIndex = 13;
             minsLoggedLbl.Text = "0";
             // 
             // startDateDTP
@@ -200,7 +200,7 @@
             startDateDTP.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
             startDateDTP.Name = "startDateDTP";
             startDateDTP.Size = new Size(213, 23);
-            startDateDTP.TabIndex = 9;
+            startDateDTP.TabIndex = 7;
             // 
             // startDateLbl
             // 
@@ -209,7 +209,7 @@
             startDateLbl.Location = new Point(148, 154);
             startDateLbl.Name = "startDateLbl";
             startDateLbl.Size = new Size(61, 15);
-            startDateLbl.TabIndex = 2;
+            startDateLbl.TabIndex = 6;
             startDateLbl.Text = "Start Date:";
             // 
             // endDateLbl
@@ -219,7 +219,7 @@
             endDateLbl.Location = new Point(456, 154);
             endDateLbl.Name = "endDateLbl";
             endDateLbl.Size = new Size(57, 15);
-            endDateLbl.TabIndex = 3;
+            endDateLbl.TabIndex = 10;
             endDateLbl.Text = "End Date:";
             // 
             // endDateDTP
@@ -230,7 +230,7 @@
             endDateDTP.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
             endDateDTP.Name = "endDateDTP";
             endDateDTP.Size = new Size(210, 23);
-            endDateDTP.TabIndex = 10;
+            endDateDTP.TabIndex = 11;
             // 
             // statusLbl
             // 
@@ -239,7 +239,7 @@
             statusLbl.Location = new Point(127, 190);
             statusLbl.Name = "statusLbl";
             statusLbl.Size = new Size(82, 15);
-            statusLbl.TabIndex = 6;
+            statusLbl.TabIndex = 8;
             statusLbl.Text = "Project Status:";
             // 
             // statusCBO
@@ -250,7 +250,7 @@
             statusCBO.Location = new Point(215, 186);
             statusCBO.Name = "statusCBO";
             statusCBO.Size = new Size(213, 23);
-            statusCBO.TabIndex = 13;
+            statusCBO.TabIndex = 9;
             statusCBO.SelectedIndexChanged += statusCBO_SelectedIndexChanged;
             // 
             // EditProjectForm
