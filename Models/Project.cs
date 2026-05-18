@@ -22,7 +22,7 @@ namespace ProjectTracker.Models
         public string Language { get; set; } = string.Empty;        // Programming language used in the project
         public DateTime StartDate { get; set; } = DateTime.Now;     // Start date of the project
         public DateTime? EndDate { get; set; }                      // End date of the project
-        public int Minutes { get; set; } = 0;                       // Total minutes spent on the project
+        public int Minutes { get; set; }                            // Total minutes spent on the project
         public string Status { get; set; } = string.Empty;          // Status of the project (e.g., "Not Started", "In Progress", "Completed", "On Hold")
     }
 }

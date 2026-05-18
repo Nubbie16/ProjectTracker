@@ -37,8 +37,8 @@ namespace ProjectTracker
             projectsGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             projectsGV.MultiSelect = false;
 
-            // Assumes the Id column is the first column in your grid.
-            // Hide it from the user but keep it available for edit/update logic.
+            // Hide the Id column from the user.
+            // This assumes the Id column is the first column in the DataGridView.
             if (projectsGV.Columns.Count > 0)
             {
                 projectsGV.Columns[0].Visible = false;
@@ -66,7 +66,7 @@ namespace ProjectTracker
                     project.Description,
                     project.Language,
                     project.StartDate.ToShortDateString(),
-                    project.EndDate?.ToShortDateString() ?? "",
+                    project.EndDate?.ToShortDateString() ?? string.Empty,
                     project.Minutes,
                     project.Status,
                     "View/Edit"
@@ -80,24 +80,34 @@ namespace ProjectTracker
 
             if (projects.Count == 0)
             {
+                projectNameCBO.Items.Clear();
                 return;
             }
 
             projectNameCBO.DisplayMember = "Name";
             projectNameCBO.ValueMember = "Id";
             projectNameCBO.DataSource = projects.ToList();
+            projectNameCBO.SelectedIndex = -1;
         }
 
         private void newProjectBtn_Click(object sender, EventArgs e)
         {
             using EditProjectForm editForm = new EditProjectForm();
 
-            if (editForm.ShowDialog() == DialogResult.OK)
+            if (editForm.ShowDialog() != DialogResult.OK)
             {
-                databaseCmds.AddProject(editForm.newProject);
-
-                LoadProjects();
+                return;
             }
+
+            if (editForm.newProject == null)
+            {
+                MessageBox.Show("No project data was returned from the project form.");
+                return;
+            }
+
+            databaseCmds.AddProject(editForm.newProject);
+
+            LoadProjects();
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -105,6 +115,7 @@ namespace ProjectTracker
             if (projectNameCBO.SelectedValue == null)
             {
                 MessageBox.Show("Please select a project.");
+                projectNameCBO.Focus();
                 return;
             }
 
@@ -131,14 +142,18 @@ namespace ProjectTracker
                 return;
             }
 
+            if (projectsGV.Columns["editBtnCol"] == null)
+            {
+                MessageBox.Show("The Edit/View button column could not be found.");
+                return;
+            }
+
             if (e.ColumnIndex != projectsGV.Columns["editBtnCol"].Index)
             {
                 return;
             }
 
-            int projectId = Convert.ToInt32(projectsGV.Rows[e.RowIndex].Cells[0].Value);
-
-            Project? selectedProject = projects.FirstOrDefault(project => project.Id == projectId);
+            Project? selectedProject = GetProjectFromGridRow(e.RowIndex);
 
             if (selectedProject == null)
             {
@@ -148,16 +163,47 @@ namespace ProjectTracker
 
             using EditProjectForm editForm = new EditProjectForm(selectedProject);
 
-            if (editForm.ShowDialog() == DialogResult.OK)
+            if (editForm.ShowDialog() != DialogResult.OK)
             {
-                Project updatedProject = editForm.newProject;
-
-                updatedProject.Id = selectedProject.Id;
-
-                databaseCmds.UpdateProject(updatedProject);
-
-                LoadProjects();
+                return;
             }
+
+            if (editForm.newProject == null)
+            {
+                MessageBox.Show("No project data was returned from the project form.");
+                return;
+            }
+
+            Project updatedProject = editForm.newProject;
+
+            // Preserve the original database Id.
+            updatedProject.Id = selectedProject.Id;
+
+            databaseCmds.UpdateProject(updatedProject);
+
+            LoadProjects();
+        }
+
+        private Project? GetProjectFromGridRow(int rowIndex)
+        {
+            if (rowIndex < 0 || rowIndex >= projectsGV.Rows.Count)
+            {
+                return null;
+            }
+
+            object? projectIdValue = projectsGV.Rows[rowIndex].Cells[0].Value;
+
+            if (projectIdValue == null)
+            {
+                return null;
+            }
+
+            if (!int.TryParse(projectIdValue.ToString(), out int projectId))
+            {
+                return null;
+            }
+
+            return projects.FirstOrDefault(project => project.Id == projectId);
         }
     }
 }
