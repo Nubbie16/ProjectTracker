@@ -144,7 +144,7 @@
             // 
             langCBO.Anchor = AnchorStyles.Left;
             langCBO.FormattingEnabled = true;
-            langCBO.Items.AddRange(new object[] { "C", "C++", "C#", "Dart", "Go", "Java", "JavaScript", "Kotlin", "PHP", "Python", "Ruby", "Rust", "SQL", "Swift", "TypeScript" });
+            langCBO.Items.AddRange(new object[] { "C", "C++", "C#", "Dart", "Go", "Java", "JavaScript", "Kotlin", "PHP", "Python", "Ruby", "Rust", "SQL", "Swift", "TypeScript", "VB.NET" });
             langCBO.Location = new Point(215, 114);
             langCBO.Name = "langCBO";
             langCBO.Size = new Size(213, 23);
